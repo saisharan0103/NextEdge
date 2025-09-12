@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "./ui/button-enhanced";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -41,12 +42,22 @@ const Header = () => {
 
         {/* Desktop CTA Buttons */}
         <div className="hidden md:flex items-center space-x-4">
-          <Button variant="nav" size="sm">
-            Login
-          </Button>
-          <Button variant="hero" size="sm">
-            Book a Demo
-          </Button>
+          <SignedOut>
+            <SignInButton mode="modal">
+              <Button variant="nav" size="sm">
+                Login
+              </Button>
+            </SignInButton>
+            <Button variant="hero" size="sm">
+              Book a Demo
+            </Button>
+          </SignedOut>
+          <SignedIn>
+            <Button variant="hero" size="sm">
+              Book a Demo
+            </Button>
+            <UserButton afterSignOutUrl="/" />
+          </SignedIn>
         </div>
 
         {/* Mobile Menu Button */}
@@ -79,12 +90,24 @@ const Header = () => {
               Contact
             </a>
             <div className="flex flex-col space-y-3 pt-4 border-t">
-              <Button variant="nav" size="sm">
-                Login
-              </Button>
-              <Button variant="hero" size="sm">
-                Book a Demo
-              </Button>
+              <SignedOut>
+                <SignInButton mode="modal">
+                  <Button variant="nav" size="sm">
+                    Login
+                  </Button>
+                </SignInButton>
+                <Button variant="hero" size="sm">
+                  Book a Demo
+                </Button>
+              </SignedOut>
+              <SignedIn>
+                <Button variant="hero" size="sm">
+                  Book a Demo
+                </Button>
+                <div className="flex items-center">
+                  <UserButton afterSignOutUrl="/" />
+                </div>
+              </SignedIn>
             </div>
           </nav>
         </div>
