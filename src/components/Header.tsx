@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "./ui/button-enhanced";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
+import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from "@clerk/clerk-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -48,6 +48,11 @@ const Header = () => {
                 Login
               </Button>
             </SignInButton>
+            <SignUpButton mode="modal">
+              <Button variant="hero" size="sm">
+                Sign Up
+              </Button>
+            </SignUpButton>
             <Button variant="hero" size="sm">
               Book a Demo
             </Button>
@@ -96,6 +101,11 @@ const Header = () => {
                     Login
                   </Button>
                 </SignInButton>
+                <SignUpButton mode="modal">
+                  <Button variant="hero" size="sm">
+                    Sign Up
+                  </Button>
+                </SignUpButton>
                 <Button variant="hero" size="sm">
                   Book a Demo
                 </Button>
