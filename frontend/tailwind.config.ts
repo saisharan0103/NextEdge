@@ -1,117 +1,82 @@
 import type { Config } from "tailwindcss";
+import animatePlugin from "tailwindcss-animate";
 
-export default {
+const config = {
   darkMode: ["class"],
   content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
-  prefix: "",
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: "24px",
       screens: {
-        "2xl": "1400px",
+        lg: "1200px",
       },
     },
     extend: {
       colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
-        primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-          hover: "hsl(var(--primary-hover))",
-          light: "hsl(var(--primary-light))",
-        },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
-        success: {
-          DEFAULT: "hsl(var(--success))",
-          foreground: "hsl(var(--success-foreground))",
-        },
+        bg: "var(--bg)",
+        surface: "var(--surface)",
+        text: "var(--text)",
+        background: "var(--bg)",
+        foreground: "var(--text)",
+        border: "var(--border)",
+        input: "var(--border)",
+        ring: "var(--primary)",
         muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
+          DEFAULT: "var(--surface)",
+          foreground: "var(--muted-text)",
         },
         card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
+          DEFAULT: "var(--surface)",
+          foreground: "var(--text)",
         },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
+        popover: {
+          DEFAULT: "var(--surface)",
+          foreground: "var(--text)",
+        },
+        primary: {
+          DEFAULT: "var(--primary)",
+          foreground: "var(--bg)",
+        },
+        accent: {
+          DEFAULT: "var(--accent)",
+          foreground: "var(--bg)",
+        },
+        secondary: {
+          DEFAULT: "var(--surface)",
+          foreground: "var(--text)",
+        },
+        destructive: {
+          DEFAULT: "#f87171",
+          foreground: "var(--bg)",
         },
       },
-      backgroundImage: {
-        "gradient-hero": "var(--gradient-hero)",
-        "gradient-card": "var(--gradient-card)", 
-        "gradient-primary": "var(--gradient-primary)",
-      },
-      boxShadow: {
-        "enterprise": "var(--shadow-lg)",
-        "card": "var(--shadow-md)",
-        "enterprise-xl": "var(--shadow-xl)",
-      },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-        "fade-up": "fade-up 0.6s ease-out forwards",
-        "slide-in": "slide-in-right 0.5s ease-out forwards",
-        "pulse-primary": "pulse-primary 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
-      },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+      textColor: {
+        muted: "var(--muted-text)",
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        heading: "var(--font-heading)",
+        body: "var(--font-body)",
       },
-      keyframes: {
-        "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
-        },
-        "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
-        },
+      borderRadius: {
+        lg: "var(--radius-card)",
+        md: "calc(var(--radius-card) - 4px)",
+        sm: "calc(var(--radius-card) - 8px)",
+        card: "var(--radius-card)",
+        button: "var(--radius-button)",
+        pill: "var(--radius-pill)",
       },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
+      transitionTimingFunction: {
+        fluid: "var(--ease)",
+      },
+      transitionDuration: {
+        enter: "var(--dur-enter)",
+        hover: "var(--dur-hover)",
+        complex: "var(--dur-complex)",
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [animatePlugin],
 } satisfies Config;
+
+export default config;

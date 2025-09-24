@@ -6,34 +6,22 @@ const SocialProof = () => {
   ];
 
   return (
-    <section className="section-padding bg-muted/20 relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--primary)) 1px, transparent 0)`,
-          backgroundSize: '24px 24px'
-        }} />
-      </div>
-      
-      <div className="container max-w-7xl mx-auto text-center relative">
-        <div className="mb-12">
-          <p className="text-lg text-muted-foreground mb-8 font-medium">
-            Trusted by leading teams and backed by industry leaders
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-6">
+    <section className="section-padding relative overflow-hidden">
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_1px_1px,rgba(34,211,238,0.12)_1px,transparent_0)] bg-[length:24px_24px] opacity-40" />
+
+      <div className="container relative text-center">
+        <p className="reveal mx-auto max-w-body text-sm font-semibold uppercase tracking-[0.28em] text-muted">
+          Trusted by leading teams and backed by industry leaders
+        </p>
+
+        <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-6">
           {logos.map((logo, index) => (
-            <div 
+            <div
               key={logo}
-              className="group relative"
-              style={{ animationDelay: `${index * 150}ms` }}
+              className="reveal surface-card flex h-20 items-center justify-center rounded-card border border-border/60 text-lg font-semibold text-muted transition duration-hover ease-fluid hover:border-primary/60 hover:text-text"
+              style={{ transitionDelay: `${index * 60}ms` }}
             >
-              <div className="bg-background/80 backdrop-blur-sm border border-border/50 rounded-xl p-6 h-20 flex items-center justify-center shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-300 hover:scale-105 hover:bg-background animate-fade-up">
-                <div className="text-xl font-bold text-muted-foreground group-hover:text-foreground transition-colors duration-300">
-                  {logo}
-                </div>
-              </div>
+              {logo}
             </div>
           ))}
         </div>

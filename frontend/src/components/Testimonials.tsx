@@ -28,48 +28,38 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="section-padding bg-muted/20">
-      <div className="container max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
-            Loved by Sales Leaders
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-balance">
-            See what our customers say about NextEdge
-          </p>
+    <section className="section-padding">
+      <div className="container">
+        <div className="mx-auto max-w-body text-center space-y-4">
+          <h2 className="reveal text-4xl font-semibold tracking-tight md:text-5xl">Loved by Sales Leaders</h2>
+          <p className="reveal text-muted">See what our customers say about NextEdge</p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="mt-14 grid gap-6 md:grid-cols-3">
           {testimonials.map((testimonial, index) => (
             <Card
               key={testimonial.name}
-              className="group hover-lift border-0 shadow-card hover:shadow-enterprise transition-all duration-300 h-full"
-              style={{ animationDelay: `${index * 200}ms` }}
+              className="reveal h-full"
+              style={{ transitionDelay: `${index * 80}ms` }}
             >
-              <CardContent className="p-8 h-full flex flex-col">
-                <div className="flex items-center justify-between mb-6">
+              <CardContent className="flex h-full flex-col gap-6 p-8">
+                <div className="flex items-center justify-between text-primary">
                   <div className="flex items-center gap-1">
                     {[...Array(testimonial.rating)].map((_, i) => (
                       <Star key={i} className="h-4 w-4 fill-primary text-primary" />
                     ))}
                   </div>
-                  <Quote className="h-8 w-8 text-primary/20" />
+                  <Quote className="h-8 w-8 text-primary/30" />
                 </div>
-                
-                <blockquote className="text-foreground leading-relaxed mb-6 flex-grow">
-                  "{testimonial.quote}"
+
+                <blockquote className="text-left text-lg leading-relaxed text-text">
+                  “{testimonial.quote}”
                 </blockquote>
-                
-                <div className="border-t pt-4">
-                  <div className="font-semibold text-foreground">
-                    {testimonial.name}
-                  </div>
-                  <div className="text-sm text-primary font-medium">
-                    {testimonial.role}
-                  </div>
-                  <div className="text-sm text-muted-foreground">
-                    {testimonial.company}
-                  </div>
+
+                <div className="mt-auto space-y-1 border-t border-border/60 pt-4 text-left">
+                  <div className="text-base font-semibold text-text">{testimonial.name}</div>
+                  <div className="text-sm font-medium text-primary">{testimonial.role}</div>
+                  <div className="text-sm text-muted">{testimonial.company}</div>
                 </div>
               </CardContent>
             </Card>

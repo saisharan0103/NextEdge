@@ -16,52 +16,44 @@ const Integrations = () => {
   ];
 
   return (
-    <section className="section-padding bg-muted/20" id="integrations">
-      <div className="container max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
+    <section className="section-padding" id="integrations">
+      <div className="container">
+        <div className="mx-auto max-w-body text-center space-y-4">
+          <h2 className="reveal text-4xl font-semibold tracking-tight md:text-5xl">
             Connect NextEdge to the tools you already use
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-balance">
-            Seamless integrations with your existing workflow
-          </p>
+          <p className="reveal text-muted">Seamless integrations with your existing workflow</p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6 mb-12">
+        <div className="mt-14 grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-8">
           {integrations.map((integration, index) => {
             const IconComponent = integration.icon;
             return (
               <Card
                 key={integration.name}
-                className="group hover-lift border-0 shadow-card hover:shadow-enterprise transition-all duration-300 aspect-square"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className="reveal aspect-square"
+                style={{ transitionDelay: `${index * 60}ms` }}
               >
-                <CardContent className="p-4 flex flex-col items-center justify-center h-full text-center">
-                  <div className="flex items-center justify-center w-12 h-12 bg-primary-light rounded-lg mb-3 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
-                    <IconComponent className="h-6 w-6 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
+                <CardContent className="flex h-full flex-col items-center justify-center gap-3 text-center">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-pill bg-primary/15 text-primary">
+                    <IconComponent className="h-6 w-6" />
                   </div>
-                  
-                  <div className="text-sm font-semibold text-foreground mb-1">
-                    {integration.name}
-                  </div>
-                  
-                  <div className="text-xs text-muted-foreground">
-                    {integration.category}
-                  </div>
+                  <div className="text-sm font-semibold text-text">{integration.name}</div>
+                  <div className="text-xs uppercase tracking-[0.28em] text-muted">{integration.category}</div>
                 </CardContent>
               </Card>
             );
           })}
         </div>
 
-        <div className="text-center">
-          <p className="text-muted-foreground mb-6">
-            Plus 50+ more integrations available
-          </p>
-          <Button variant="hero-outline" size="lg" className="group">
+        <div className="mt-12 space-y-4 text-center">
+          <p className="reveal text-muted">Plus 50+ more integrations available</p>
+          <div className="reveal" style={{ transitionDelay: "120ms" }}>
+            <Button variant="outline" size="lg" className="px-8">
             View All Integrations
-            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Button>
+            <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </div>
         </div>
       </div>
     </section>
