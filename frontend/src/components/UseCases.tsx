@@ -36,53 +36,41 @@ const UseCases = () => {
 
   return (
     <section className="section-padding">
-      <div className="container max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
-            Who It's For
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-balance">
-            NextEdge adapts to your team's unique needs and workflow
-          </p>
+      <div className="container">
+        <div className="mx-auto max-w-body text-center space-y-4">
+          <h2 className="reveal text-4xl font-semibold tracking-tight md:text-5xl">Who It's For</h2>
+          <p className="reveal text-muted">NextEdge adapts to your team's unique needs and workflow</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="mt-14 grid gap-6 md:grid-cols-2">
           {useCases.map((useCase, index) => {
             const IconComponent = useCase.icon;
             return (
               <Card
                 key={useCase.title}
-                className="group hover-lift border-0 shadow-card hover:shadow-enterprise transition-all duration-300 h-full"
-                style={{ animationDelay: `${index * 200}ms` }}
+                className="reveal h-full"
+                style={{ transitionDelay: `${index * 80}ms` }}
               >
-                <CardHeader className="pb-4">
+                <CardHeader className="pb-0">
                   <div className="flex items-center gap-4">
-                    <div className="flex items-center justify-center w-12 h-12 bg-primary-light rounded-xl group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
-                      <IconComponent className="h-6 w-6 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
+                    <div className="flex h-12 w-12 items-center justify-center rounded-pill bg-primary/15 text-primary">
+                      <IconComponent className="h-6 w-6" />
                     </div>
                     <div>
-                      <CardTitle className="text-xl font-bold text-foreground">
-                        {useCase.title}
-                      </CardTitle>
-                      <p className="text-sm font-medium text-primary">
-                        {useCase.subtitle}
-                      </p>
+                      <CardTitle className="text-xl font-semibold text-text">{useCase.title}</CardTitle>
+                      <p className="text-sm font-medium text-primary">{useCase.subtitle}</p>
                     </div>
                   </div>
                 </CardHeader>
-                
-                <CardContent className="pt-0">
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
-                    {useCase.description}
-                  </p>
-                  
-                  <div className="space-y-2">
+
+                <CardContent className="mt-6 space-y-6">
+                  <p className="text-sm leading-relaxed text-muted">{useCase.description}</p>
+
+                  <div className="space-y-2 text-left">
                     {useCase.benefits.map((benefit, benefitIndex) => (
-                      <div key={benefitIndex} className="flex items-center gap-3">
-                        <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                        <span className="text-sm text-foreground font-medium">
-                          {benefit}
-                        </span>
+                      <div key={benefitIndex} className="flex items-center gap-3 text-sm text-text">
+                        <span className="flex h-2 w-2 items-center justify-center rounded-full bg-accent" />
+                        <span>{benefit}</span>
                       </div>
                     ))}
                   </div>

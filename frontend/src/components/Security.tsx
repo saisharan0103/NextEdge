@@ -33,46 +33,38 @@ const Security = () => {
 
   return (
     <section className="section-padding" id="security">
-      <div className="container max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
+      <div className="container">
+        <div className="mx-auto max-w-body text-center space-y-4">
+          <h2 className="reveal text-4xl font-semibold tracking-tight md:text-5xl">
             Enterprise-grade security and reliability
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-balance">
-            Your data security and privacy are our top priorities
-          </p>
+          <p className="reveal text-muted">Your data security and privacy are our top priorities</p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {securityFeatures.map((feature, index) => {
             const IconComponent = feature.icon;
             return (
               <Card
                 key={feature.title}
-                className="group hover-lift border-0 shadow-card hover:shadow-enterprise transition-all duration-300 h-full"
-                style={{ animationDelay: `${index * 150}ms` }}
+                className="reveal h-full"
+                style={{ transitionDelay: `${index * 80}ms` }}
               >
-                <CardContent className="p-6 text-center">
-                  <div className="flex items-center justify-center w-16 h-16 bg-success/10 rounded-full mb-4 mx-auto group-hover:bg-success group-hover:text-success-foreground transition-all duration-300">
-                    <IconComponent className="h-8 w-8 text-success group-hover:text-success-foreground transition-colors duration-300" />
+                <CardContent className="flex h-full flex-col items-center gap-4 p-6 text-center">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-pill bg-accent/20 text-accent">
+                    <IconComponent className="h-8 w-8" />
                   </div>
-                  
-                  <h3 className="text-lg font-bold text-foreground mb-3">
-                    {feature.title}
-                  </h3>
-                  
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {feature.description}
-                  </p>
+                  <h3 className="text-lg font-semibold text-text">{feature.title}</h3>
+                  <p className="text-sm leading-relaxed text-muted">{feature.description}</p>
                 </CardContent>
               </Card>
             );
           })}
         </div>
-        
+
         <div className="mt-12 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-success/10 text-success rounded-full text-sm font-medium">
-            <Shield className="h-4 w-4" />
+          <div className="reveal inline-flex items-center gap-2 rounded-pill border border-border/60 bg-surface/60 px-5 py-2 text-sm font-medium text-text" style={{ transitionDelay: "160ms" }}>
+            <Shield className="h-4 w-4 text-accent" />
             Enterprise Security & Compliance Ready
           </div>
         </div>
