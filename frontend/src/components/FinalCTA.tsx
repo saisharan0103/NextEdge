@@ -5,7 +5,8 @@ import { ArrowRight, CheckCircle } from "lucide-react";
 const FinalCTA = () => {
   return (
     <section className="section-padding relative overflow-hidden">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_center,rgba(91,140,255,0.2),transparent_55%)]" />
+      <div className="absolute inset-0 -z-10 bg-cta-radial" />
+
       <div className="container text-center">
         <div className="mx-auto max-w-3xl space-y-8">
           <h2 className="reveal text-[clamp(36px,5vw,64px)] font-semibold tracking-tight text-text">

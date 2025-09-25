@@ -7,7 +7,8 @@ const SocialProof = () => {
 
   return (
     <section className="section-padding relative overflow-hidden">
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_1px_1px,rgba(34,211,238,0.12)_1px,transparent_0)] bg-[length:24px_24px] opacity-40" />
+      <div className="absolute inset-0 -z-10 bg-grid-accent opacity-40" />
+
 
       <div className="container relative text-center">
         <p className="reveal mx-auto max-w-body text-sm font-semibold uppercase tracking-[0.28em] text-muted">

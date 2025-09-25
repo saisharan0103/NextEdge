@@ -17,7 +17,7 @@ const Header = () => {
           <img
             src="/lovable-uploads/adc57d85-0a2e-43b2-91d1-45cf3e175ec3.png"
             alt="NEXTEDGE"
-            className="h-8 w-auto drop-shadow-[0_6px_18px_rgba(91,140,255,0.25)]"
+            className="h-8 w-auto drop-primary-glow"
           />
         </div>
 
