@@ -10,38 +10,38 @@ const Header = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 max-w-7xl items-center justify-between">
+    <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-bg/80 backdrop-blur supports-[backdrop-filter]:bg-bg/75">
+      <div className="container flex h-16 items-center justify-between">
         {/* Logo */}
         <div className="flex items-center">
-          <img 
-            src="/lovable-uploads/adc57d85-0a2e-43b2-91d1-45cf3e175ec3.png" 
-            alt="NEXTEDGE" 
-            className="h-8 w-auto"
+          <img
+            src="/lovable-uploads/adc57d85-0a2e-43b2-91d1-45cf3e175ec3.png"
+            alt="NEXTEDGE"
+            className="h-8 w-auto drop-primary-glow"
           />
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
-          <a href="#product" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+        <nav className="hidden items-center space-x-8 md:flex">
+          <a href="#product" className="text-sm font-medium text-muted transition duration-hover ease-fluid hover:text-text">
             Product
           </a>
-          <a href="#integrations" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+          <a href="#integrations" className="text-sm font-medium text-muted transition duration-hover ease-fluid hover:text-text">
             Integrations
           </a>
-          <a href="#pricing" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+          <a href="#pricing" className="text-sm font-medium text-muted transition duration-hover ease-fluid hover:text-text">
             Pricing
           </a>
-          <a href="#security" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+          <a href="#security" className="text-sm font-medium text-muted transition duration-hover ease-fluid hover:text-text">
             Security
           </a>
-          <a href="#contact" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+          <a href="#contact" className="text-sm font-medium text-muted transition duration-hover ease-fluid hover:text-text">
             Contact
           </a>
         </nav>
 
         {/* Desktop CTA Buttons */}
-        <div className="hidden md:flex items-center space-x-4">
+        <div className="hidden items-center space-x-3 md:flex">
           <SignedOut>
             <SignInButton mode="modal">
               <Button variant="nav" size="sm">
@@ -49,16 +49,16 @@ const Header = () => {
               </Button>
             </SignInButton>
             <SignUpButton mode="modal">
-              <Button variant="hero" size="sm">
+              <Button variant="outline" size="sm" className="rounded-pill px-6">
                 Sign Up
               </Button>
             </SignUpButton>
-            <Button variant="hero" size="sm">
+            <Button variant="primary" size="sm" className="btn-primary px-6">
               Book a Demo
             </Button>
           </SignedOut>
           <SignedIn>
-            <Button variant="hero" size="sm">
+            <Button variant="primary" size="sm" className="btn-primary px-6">
               Book a Demo
             </Button>
             <UserButton afterSignOutUrl="/" />
@@ -68,7 +68,7 @@ const Header = () => {
         {/* Mobile Menu Button */}
         <button
           onClick={toggleMenu}
-          className="md:hidden p-2 text-foreground hover:text-primary"
+          className="rounded-button p-2 text-muted transition duration-hover ease-fluid hover:text-text md:hidden"
           aria-label="Toggle menu"
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -77,24 +77,24 @@ const Header = () => {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden border-t bg-background/95 backdrop-blur">
-          <nav className="container py-4 space-y-4">
-            <a href="#product" className="block text-sm font-medium text-foreground hover:text-primary transition-colors">
+        <div className="border-t border-border/60 bg-bg/95 backdrop-blur md:hidden">
+          <nav className="container space-y-4 py-4">
+            <a href="#product" className="block text-sm font-medium text-muted transition duration-hover ease-fluid hover:text-text">
               Product
             </a>
-            <a href="#integrations" className="block text-sm font-medium text-foreground hover:text-primary transition-colors">
+            <a href="#integrations" className="block text-sm font-medium text-muted transition duration-hover ease-fluid hover:text-text">
               Integrations
             </a>
-            <a href="#pricing" className="block text-sm font-medium text-foreground hover:text-primary transition-colors">
+            <a href="#pricing" className="block text-sm font-medium text-muted transition duration-hover ease-fluid hover:text-text">
               Pricing
             </a>
-            <a href="#security" className="block text-sm font-medium text-foreground hover:text-primary transition-colors">
+            <a href="#security" className="block text-sm font-medium text-muted transition duration-hover ease-fluid hover:text-text">
               Security
             </a>
-            <a href="#contact" className="block text-sm font-medium text-foreground hover:text-primary transition-colors">
+            <a href="#contact" className="block text-sm font-medium text-muted transition duration-hover ease-fluid hover:text-text">
               Contact
             </a>
-            <div className="flex flex-col space-y-3 pt-4 border-t">
+            <div className="flex flex-col space-y-3 border-t border-border/60 pt-4">
               <SignedOut>
                 <SignInButton mode="modal">
                   <Button variant="nav" size="sm">
@@ -102,16 +102,16 @@ const Header = () => {
                   </Button>
                 </SignInButton>
                 <SignUpButton mode="modal">
-                  <Button variant="hero" size="sm">
+                  <Button variant="outline" size="sm" className="rounded-pill">
                     Sign Up
                   </Button>
                 </SignUpButton>
-                <Button variant="hero" size="sm">
+                <Button variant="primary" size="sm" className="btn-primary">
                   Book a Demo
                 </Button>
               </SignedOut>
               <SignedIn>
-                <Button variant="hero" size="sm">
+                <Button variant="primary" size="sm" className="btn-primary">
                   Book a Demo
                 </Button>
                 <div className="flex items-center">

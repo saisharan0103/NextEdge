@@ -43,29 +43,28 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="section-padding bg-muted/20">
-      <div className="container max-w-4xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
+    <section className="section-padding">
+      <div className="container max-w-4xl">
+        <div className="mx-auto max-w-body text-center space-y-4">
+          <h2 className="reveal text-4xl font-semibold tracking-tight md:text-5xl">
             Frequently Asked Questions
           </h2>
-          <p className="text-xl text-muted-foreground text-balance">
-            Everything you need to know about NextEdge
-          </p>
+          <p className="reveal text-muted">Everything you need to know about NextEdge</p>
         </div>
 
-        <div className="bg-background rounded-2xl shadow-enterprise p-8">
+        <div className="mt-14 rounded-card border border-border/60 bg-surface/80 p-8">
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
-              <AccordionItem 
-                key={index} 
+              <AccordionItem
+                key={index}
                 value={`item-${index}`}
-                className="border border-border rounded-lg px-6"
+                className="reveal overflow-hidden rounded-card border border-border/60 bg-bg/60"
+                style={{ transitionDelay: `${index * 60}ms` }}
               >
-                <AccordionTrigger className="text-left text-lg font-semibold text-foreground hover:text-primary transition-colors">
+                <AccordionTrigger className="px-6 py-4 text-left text-lg font-semibold text-text transition duration-hover ease-fluid hover:text-primary">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed pt-2 text-base">
+                <AccordionContent className="px-6 pb-4 text-sm leading-relaxed text-muted">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
