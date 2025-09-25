@@ -9,6 +9,7 @@ const SocialProof = () => {
     <section className="section-padding relative overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-grid-accent opacity-40" />
 
+
       <div className="container relative text-center">
         <p className="reveal mx-auto max-w-body text-sm font-semibold uppercase tracking-[0.28em] text-muted">
           Trusted by leading teams and backed by industry leaders

@@ -29,6 +29,7 @@ const Hero = () => {
   return (
     <section className="section-padding relative overflow-hidden">
       <div className="absolute inset-0 -z-10 bg-hero-radial" />
+
       <div className="container relative z-10 flex flex-col items-center text-center gap-12">
         <div className="max-w-heading text-balance space-y-6">
           <h1 className="reveal text-[clamp(40px,6vw,72px)] font-bold tracking-tight">
@@ -59,6 +60,7 @@ const Hero = () => {
             <div
               key={stat.label}
               className="reveal surface-card shadow-card-strong p-6 text-left"
+
               style={{ transitionDelay: `${index * 80}ms` }}
             >
               <div className="text-3xl font-semibold text-primary">{stat.number}</div>

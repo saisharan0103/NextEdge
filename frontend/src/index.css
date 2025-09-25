@@ -96,6 +96,7 @@
 
   .divider {
     border-color: var(--border);
+
   }
 
   .bg-hero-radial {
@@ -145,5 +146,6 @@
 
   .hover\:shadow-primary-strong:hover {
     box-shadow: 0 24px 48px color-mix(in srgb, var(--primary) 36%, transparent);
+
   }
 }
